@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      # 当前服务注册在 Eureka Server 上的名称，与远程仓库的配置文件名对应。
+      name: configclient
+      # Git Repository 的分支。
+      label: master
+      discovery:
+        # 是否开启 Config 服务发现支持。
+        enabled: true
+        # 配置中心在 Eureka Server 上注册的名称。
+        service-id: configserver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

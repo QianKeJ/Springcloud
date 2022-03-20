@@ -1,0 +1,13 @@
+# 创建 bootstrap.yml，配置读取本地配置中心的相关信息。
+spring:
+  # 通过spring.application.name 结合spring.profiles.active拼接目标配置文件名，configclient-dev.yml，去 Config Server 中查找该文件。
+  application:
+    name: configclient
+  profiles:
+    active: dev
+  cloud:
+    config:
+      # 本地 Config Server 的访问路径
+      uri: http://localhost:8762
+      # 设置客户端优先判断 Config Server 获取是否正常
+      fail-fast: true
